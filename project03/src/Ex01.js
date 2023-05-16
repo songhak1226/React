@@ -27,6 +27,7 @@ const Ex01 = () => {
   */
   
   let num = 0
+  let number = 0
   const [num2, setNum2] = useState(0)
 
   const ck1 = ()=>{
