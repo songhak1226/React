@@ -1,0 +1,24 @@
+/* .item-border{
+  border: 10px solid bisque;
+  padding: 5px;
+  margin : 5px;
+  background-color: beige;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-style: oblique;
+} */
+
+.Member-border{
+  color: yellow;
+  border : 10px solid yellow;
+  padding: 5px;
+  margin : 5px;
+  background-color: blueviolet;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-style: oblique;
+}
