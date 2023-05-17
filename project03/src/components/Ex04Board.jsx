@@ -6,7 +6,7 @@ const Ex04Board = ({Path,Name,Dice,Score}) => {
     <div className='board-item'>
         <h3>{Name}</h3>
         <p>{Dice}</p>
-        <img>{Path}</img>
+        <img src={Path}></img>
         <h4>현재 점수는?</h4>
         <h3>{Score}</h3>
     </div>

@@ -38,8 +38,8 @@ const Ex04 = () => {
     const[comDice, setComDice] = useState(0);
     const[myScore, setMyScore] = useState(0);
     const[comScore, setComScore] = useState(0);
-    const[myPath, setMyPath] = useState("");
-    const[comPath, setComPath] = useState("");
+    const[myPath, setMyPath] = useState("/img/dice1.png");
+    const[comPath, setComPath] = useState("/img/dice1.png");
 
 
     const diceCk = ()=>{
@@ -69,6 +69,8 @@ const Ex04 = () => {
         setComDice(0);
         setMyScore(0);
         setComScore(0);
+        setMyPath(0);
+        setComPath(0);
     }
 
     
@@ -82,8 +84,8 @@ const Ex04 = () => {
         </div>
 
         <div className='board-container'>
-            <Board path={imgPath} Name="나" Dice={myDice} Path={myPath} Score={myScore}/>
-            <Board path={imgPath} Name="컴퓨터" Dice={comDice} Path={comPath} Score={comScore}/>
+            <Board Name="나" Dice={myDice} Path={myPath} Score={myScore}/>
+            <Board Name="컴퓨터" Dice={comDice} Path={comPath} Score={comScore}/>
         </div>
     </div>
   )
