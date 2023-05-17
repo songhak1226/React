@@ -29,42 +29,46 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const Ex04 = () => {
 
     // 이미지 경로 가져오기 (단! public 폴더 이용할 때만!)
-    let imgPath = '/img/dice'
+    let imgPath = '/img/dice';
 
    
-    const[ranNum1, setRanNum1] = useState(0)
-    const[ranNum2, setRanNum2] = useState(0)
+    const[ranNum1, setRanNum1] = useState(0);
+    const[ranNum2, setRanNum2] = useState(0);
     const[myDice, setMyDice] = useState(0);
-    const[comDice, setComDice] = useState(0)
-    const[myScore, setMyScore] = useState(0)
-    const[comScore, setComScore] = useState(0)
+    const[comDice, setComDice] = useState(0);
+    const[myScore, setMyScore] = useState(0);
+    const[comScore, setComScore] = useState(0);
+    const[myPath, setMyPath] = useState("");
+    const[comPath, setComPath] = useState("");
 
 
     const diceCk = ()=>{
-        // 랜덤한 수 세팅
-        setRanNum1(parseInt(Math.random()*6+1))
+        setRanNum1(parseInt(Math.random()*6+1));
+        setMyDice(parseInt(ranNum1));
 
-        //내가 선택한 수 세팅
-        setMyDice(parseInt(ranNum1))
+        setRanNum2(parseInt(Math.random()*6+1));
+        setComDice(parseInt(ranNum2));
 
-        setRanNum2(parseInt(Math.random()*6+1))
-        setComDice(parseInt(ranNum2))
+        setMyPath(imgPath+myDice+".png");
+        setComPath(imgPath+comDice+".png");
+
+
 
         if(myDice > comDice){
-            setMyScore(myScore+1)
+            setMyScore(myScore+1);
         } else if(myDice < comDice) {
-            setComScore(comScore+1)
+            setComScore(comScore+1);
         } else {
-            setMyScore(myScore+0)
-            setComScore(comScore+0)
+            setMyScore(myScore+0);
+            setComScore(comScore+0);
         }
     }
 
     const resetCk = ()=>{
-        setMyDice(0)
-        setComDice(0)
-        setMyScore(0)
-        setComScore(0)
+        setMyDice(0);
+        setComDice(0);
+        setMyScore(0);
+        setComScore(0);
     }
 
     
@@ -78,8 +82,8 @@ const Ex04 = () => {
         </div>
 
         <div className='board-container'>
-            <Board path={imgPath} Name="나" Dice={myDice} Score={myScore}/>
-            <Board path={imgPath} Name="컴퓨터" Dice={comDice} Score={comScore}/>
+            <Board path={imgPath} Name="나" Dice={myDice} Path={myPath} Score={myScore}/>
+            <Board path={imgPath} Name="컴퓨터" Dice={comDice} Path={comPath} Score={comScore}/>
         </div>
     </div>
   )
