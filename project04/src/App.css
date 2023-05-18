@@ -1,0 +1,17 @@
+.menu-container{
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-container>div{
+    flex-basis: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    border: 3px solid lightblue;
+    padding: 10px;
+}

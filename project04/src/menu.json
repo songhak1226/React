@@ -1,0 +1,20 @@
+{
+    "list" : [
+        {
+            "name" : "카라멜 커스터드 푸딩",
+            "price" : 4000,
+            "content" : "고려시대에 원나라에서 목화씨를 훔쳐온 문익점 푸딩이 바로 요녀석!😎",
+            "imgSrc" : "https://cdn.imweb.me/thumbnail/20230412/72ab39bf2c337.jpg"
+        },{
+            "name" : "블루베리 푸딩",
+            "price" : 4300,
+            "content" : "라즈베리 블루베리 스트로베리 암베리베리굿 집가고싶다",
+            "imgSrc" : "https://cdn.imweb.me/thumbnail/20230427/ff04ae058095e.jpg"
+        },{
+            "name" : "라즈베리 푸딩",
+            "price" : 4500,
+            "content" : "60년 전통 Korean Traditional K-푸딩",
+            "imgSrc" : "https://cdn.imweb.me/thumbnail/20230427/d2e739dd19f3c.jpg"
+        }
+    ]
+}

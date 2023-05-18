@@ -31,61 +31,113 @@ const Ex04 = () => {
     // 이미지 경로 가져오기 (단! public 폴더 이용할 때만!)
     let imgPath = '/img/dice';
 
-   
-    const[ranNum1, setRanNum1] = useState(0);
-    const[ranNum2, setRanNum2] = useState(0);
-    const[myDice, setMyDice] = useState(0);
-    const[comDice, setComDice] = useState(0);
-    const[myScore, setMyScore] = useState(0);
-    const[comScore, setComScore] = useState(0);
-    const[myPath, setMyPath] = useState("/img/dice1.png");
-    const[comPath, setComPath] = useState("/img/dice1.png");
+    //const[myScore, setMyScore] = useState(0);
+    //const[comScore, setComScore] = useState(0);
+    //const[myPath, setMyPath] = useState("/img/dice1.png");
+    //const[comPath, setComPath] = useState("/img/dice1.png");
 
+    //let ran1 = parseInt(Math.random()*6+1);
+    //let ran2 = parseInt(Math.random()*6+1);
+
+    const[myDice, setMyDice] = useState(1);
+    const[comDice, setComDice] = useState(1);
+
+    const[myPath, setMyPath] = useState(imgPath+"1.png")
+    const[comPath, setComPath] = useState(imgPath+"1.png")
+
+    const[myScore, setMyScore] = useState(0)
+    const[comScore, setComScore] = useState(0)
+
+
+
+    const makeRandom = ()=>{
+        return parseInt(Math.random()*6)+1
+    }
+
+    
+/*
 
     const diceCk = ()=>{
-        setRanNum1(parseInt(Math.random()*6+1));
-        setMyDice(parseInt(ranNum1));
 
-        setRanNum2(parseInt(Math.random()*6+1));
-        setComDice(parseInt(ranNum2));
+        setMyPath(imgPath+ran1+".png");
+        setComPath(imgPath+ran2+".png");
 
-        setMyPath(imgPath+myDice+".png");
-        setComPath(imgPath+comDice+".png");
-
-
-
-        if(myDice > comDice){
+        if(ran1 > ran2){
             setMyScore(myScore+1);
-        } else if(myDice < comDice) {
+        } else if(ran1 < ran2) {
             setComScore(comScore+1);
         } else {
             setMyScore(myScore+0);
             setComScore(comScore+0);
         }
+
+        if(myScore == 5){
+            alert("승리")
+        } else if(comScore==5){
+            alert("패배")
+        }
+    }
+    */
+
+    const makeReset = ()=>{
+        setMyDice(1)
+        setComDice(1)
+        setMyPath(imgPath+"1.png")
+        setComPath(imgPath+"1.png")
+        setMyScore(0)
+        setComScore(0)
     }
 
+    const throwDice = ()=>{
+        setMyDice(makeRandom())
+        setComDice(makeRandom())
+
+        setMyPath(imgPath+myDice+'.png')
+        setComPath(imgPath+comDice+'.png')
+
+        if(myScore <= 4 && comScore <= 4){
+            if(myDice > comDice){
+                setMyScore(myScore+1)
+            } else if(myDice < comDice){
+                setComScore(comScore+1)
+            } else {
+                setMyScore(myScore)
+                setComScore(comScore)
+            }
+        } else {
+            let result = myScore > comScore ? '승리' : '패배'
+            alert('게임이 종료 되었습니다. 당신의' + result + '입니다.')
+            makeReset()
+        }
+    }
+
+
+
+
     const resetCk = ()=>{
-        setMyDice(0);
-        setComDice(0);
         setMyScore(0);
         setComScore(0);
         setMyPath(0);
         setComPath(0);
     }
 
-    
+    //btn-container아래에 넣기
+    //<Button variant="info" onClick={diceCk}>던지기!</Button>{' '}
+    //<Button variant="secondary" onClick={resetCk}>RESET</Button>
+
 
   return (
     <div className='container'>
         <h1>주사위 게임</h1>
         <div className='btn-container'>
-            <Button variant="info" onClick={diceCk}>던지기!</Button>{' '}
-            <Button variant="secondary" onClick={resetCk}>RESET</Button>
+            
+            <Button variant="info" onClick={throwDice}>던지기!</Button>{' '}
+            <Button variant="secondary" onClick={makeReset}>RESET</Button>
         </div>
 
         <div className='board-container'>
-            <Board Name="나" Dice={myDice} Path={myPath} Score={myScore}/>
-            <Board Name="컴퓨터" Dice={comDice} Path={comPath} Score={comScore}/>
+            <Board Name="나" Path={myPath} Score={myScore} dice={myDice}/>
+            <Board Name="컴퓨터" Path={comPath} Score={comScore} dice={comDice}/>
         </div>
     </div>
   )
