@@ -7,8 +7,8 @@ const Ex04List = () => {
     const{todos} = useContext(TodoContext)
   return (
     <div>
-        {todos.map((item, idx) => 
-           <Ex04ListItem todo={item} index={idx} key={item.text+idx}/>
+        {todos.map((item, index) => 
+           <Ex04ListItem todo={item} index={index} key={item.text+index}/>
         )}
     </div>
   )
