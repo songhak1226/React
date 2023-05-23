@@ -9,7 +9,12 @@ import './index.css';
 // import App from './Ex02';
 
 // 3. Context 실습 - 다크모드 만들기
-import App from './Ex03';
+// import App from './Ex03';
+
+// 4. Mini Project - Todo List 만들기
+import App from './Ex04';
+
+
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
