@@ -19,7 +19,6 @@ const Ex04 = () => {
 
     // 기존 todos 배열에 새로운 할일을 추가하는 함수
     const handleTodoAddition = ()=>{
-        console.log('handleTodoAddition Function');
         console.log('newToDo', newTodo);
         setTodos([...todos, {text : newTodo, completed : false}])
         setNewTodo("")
