@@ -12,7 +12,16 @@ import './index.css';
 // import App from './Ex03';
 
 // 4. Mini Project - Todo List 만들기
-import App from './Ex04';
+// import App from './Ex04';
+
+// 5. useRef 예제 - 도형 크기 변경시키기
+// import App from './Ex05';
+
+// 6. useRef 실습 - pdf 변경시키기
+// import App from './Ex06';
+
+// 7. useRef 실습 - 사진 변경 & focus
+import App from './Ex07';
 
 
 import reportWebVitals from './reportWebVitals';

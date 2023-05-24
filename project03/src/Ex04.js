@@ -111,9 +111,6 @@ const Ex04 = () => {
         }
     }
 
-
-
-
     const resetCk = ()=>{
         setMyScore(0);
         setComScore(0);
