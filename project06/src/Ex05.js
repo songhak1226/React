@@ -53,7 +53,7 @@ const Ex05 = () => {
 
     useEffect(()=>{
         getData()
-    },[])
+    },[city])
 
 
   return (
