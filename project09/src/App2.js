@@ -30,7 +30,6 @@ const App2 = () => {
                 latlng: { lat: 35.110479, lng: 126.877456 },
             }
         ])
-
         setLevel(8)
 
     }
