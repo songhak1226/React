@@ -2,7 +2,11 @@ import './App.css';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Main from './components/Main';
+import ProductList from './components/ProductList';
+import ProductDetail from './components/ProductDetail';
+import Storage from './components/Storage';
 import { Route, Routes } from 'react-router-dom';
+import { useState } from 'react';
 
 function App() {
 
@@ -22,13 +26,19 @@ function App() {
     5) Product Item Misson
     6) Product Detail Misson
   */
+
+  const [list, setList]=useState([])
+
   return (
     <div className="container">
+      <Header/>
       <Routes>
-      <Route path='/Main' element={<Header/>}></Route>
-      <Route path='/Main' element={<Main/>}></Route>
-      <Route path='/Main' element={<Footer/>}></Route>
+        <Route path='/' element={<Main/>}></Route>
+        <Route path='/list' element={<ProductList list={list} setList={setList}/>}></Route>
+        <Route path='/detail/:num' element={<ProductDetail list={list}/>}></Route>
+        <Route path='/storage' element={<Storage/>}></Route>
       </Routes>
+      <Footer/>
     </div>
   );
 }
