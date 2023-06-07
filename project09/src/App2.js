@@ -22,11 +22,11 @@ const App2 = () => {
         setCenterLon(126.91989541267787)
         setData([
             {
-                content: <div style={{ color: "#000" }}>스마트인재개발원</div>,
+                content: <div style={{ color: "#000" }}>스마트인재개발원 동구점</div>,
                 latlng: { lat: 35.14980068704499, lng: 126.91989541267787  }
             },
             {
-                content: <div style={{ color: "#000" }}>스마트인재개발원</div>,
+                content: <div style={{ color: "#000" }}>스마트인재개발원 남구점</div>,
                 latlng: { lat: 35.110479, lng: 126.877456 },
             }
         ])
