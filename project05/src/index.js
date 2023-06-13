@@ -9,7 +9,7 @@ import './index.css';
 // import App from './Ex02';
 
 // 3. Context 실습 - 다크모드 만들기
-// import App from './Ex03';
+import App from './Ex03';
 
 // 4. Mini Project - Todo List 만들기
 // import App from './Ex04';
@@ -21,7 +21,7 @@ import './index.css';
 // import App from './Ex06';
 
 // 7. useRef 실습 - 사진 변경 & focus
-import App from './Ex07';
+// import App from './Ex07';
 
 
 import reportWebVitals from './reportWebVitals';
