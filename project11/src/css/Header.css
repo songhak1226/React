@@ -1,0 +1,41 @@
+.Headermain {
+    display: flex;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    overflow-wrap: break-word;
+  }
+  
+  
+  .Headermain > div {
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 9%;
+    height: 10%;
+    text-align: center;
+    overflow-wrap: break-word;
+    font-size: 1.3em;
+    
+  }
+  
+  @media (max-width: 600px) {
+    .Headermain > div {
+      font-size: 0.5em;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .Headermain > div {
+      font-size: 1em; /* Adjust the maximum font size as needed */
+    }
+  }
+  
+  .HeaderBox {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+  
+  .Headermain > div {
+    white-space: nowrap;
+  }
+  

@@ -1,0 +1,94 @@
+
+.community{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 100%;
+}
+.title1{
+    width:100%;
+
+}
+.community_icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.community_input{
+    width: 10px;
+    margin-bottom: 3%;
+}
+.community_icon{
+    width: 100%;
+}
+.community_link:hover{
+    background-color: rgba(209, 245, 203, 1);
+    border-radius: 30%;
+    width: 10%;
+}
+.community_icon>button{
+    font-size: 10px;
+}
+.community_icon_1{
+    position: relative;
+    border: none;
+    display: inline-block;
+    border-radius: 10%;
+    font-family: "paybooc-Light", sans-serif;
+    background-color: white;
+    text-decoration: none;
+    transition: 0.25s;
+    margin-left: 5%;
+    height: 25px;
+}
+
+.community_input > input{
+    position: relative;
+    border: none;
+    display: inline-block;
+    border-radius: 10%;
+    font-family: "paybooc-Light", sans-serif;
+
+    text-decoration: none;
+    transition: 0.25s;
+    margin-left: 5%;
+    height: 25px;
+}
+
+.community_input_1{
+    border-radius: 15%;
+    width: 15%;
+    text-align: center;
+}
+.community_icon_1:hover{
+    background-color: rgba(209, 245, 203, 1);
+}
+
+.community_input > input:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.community_input_1:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.title1{
+    border-width: 0.1px; /* Adjust the value as desired */
+    border: 0.1px solid #ebecef;
+}
+.title1_1{
+    /* Other existing styles */
+    border-width: 0.1px; /* Adjust the value as desired */
+    border: 0.1px solid #ebecef;
+}
+
+.title1_1_1{
+    width: 100%;
+    border: 0.1px solid #ebecef;
+    height: 20px;
+}
+
+.community_link{
+    margin-left: 85%;
+}

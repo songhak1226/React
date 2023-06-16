@@ -1,0 +1,24 @@
+.login-button {
+    background-color: orange;
+    border: 1px solid orange;
+    width: 160px;
+    height: 30px;
+  }
+  
+  .login-container input,
+.login-container button {
+  margin-bottom: 10px; 
+}
+
+.login-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    text-align: center;
+    
+}
+input:focus {
+    outline: 1px solid orange;
+}

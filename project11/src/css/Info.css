@@ -1,0 +1,14 @@
+.Info_Main1{
+    display: flex;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+}
+.Info_Main1{
+    background-color: aquamarine;
+    text-align: center;
+}
+
+.Info_Main{
+    text-align: center;
+}
