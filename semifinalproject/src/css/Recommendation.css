@@ -1,0 +1,65 @@
+.Header-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    padding: 50px;
+    background-color: #f3f3f3;
+    height: 100%;
+    font-family: "Arial", sans-serif;
+}
+
+.Header-main h1 {
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 50px;
+}
+
+.Header-main  h2 {
+    color: #777;
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.Header-main button {
+    background-color: #5c7aea;
+    color: white;
+    font-size: 1.3em;
+    margin: 13px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 230px;
+  }
+
+.Header-main button:hover {
+    background-color: #3f60cc;
+    font-weight: bold;
+}
+
+.Header-main button:active {
+    background-color: #314a9a;
+}
+
+.btn1,
+.btn2,
+.btn3,
+.btn3-1,
+.btn4,
+.btn4-1,
+.btn5,
+.btn5-1,
+.btn6,
+.btn6-1,
+.btn7,
+.result {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}

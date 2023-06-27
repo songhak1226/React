@@ -1,27 +1,196 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import Pagination from "react-js-pagination";
+import '../css/Info.css';
+import { Link } from 'react-router-dom';
+
 
 const Info = () => {
+  const [page, setPage] = useState(1);
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [liquids, setLiquids] = useState([]);
+  
+
+  useEffect(() => {
+    axios
+      .get('http://localhost:8099/soolsool/Info')
+      .then((response) => {
+        setLiquids(response.data)
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
+
+  const handlePageChange = (page) => {
+    setPage(page);
+  };
+
+  const handleCategoryClick = (category) => {
+    setSelectedCategory(category);
+  };
+
+  const filteredLiquids = selectedCategory
+    ? liquids.filter((liquid) => liquid.liq_type === selectedCategory)
+    : liquids;
+
+  const renderInfoBoxes = () => {
+    return filteredLiquids
+      .slice((page - 1) * 12, page * 12)
+      .map((liquid, index) => (
+        <Link
+          to={`/InfoSingle/${liquid.liq_idx}`}
+          key={index}
+          className="Info_Box"
+        >
+          <img src={liquid.liq_img} alt={liquid.liq_name} />
+          <h2 className='Info_Box_title'>{liquid.liq_name}</h2>
+          <p className="Info_Box_description">{liquid.liq_tag1}</p>
+          <div className="Info_Descr">
+            <h3>{liquid.liq_tag2}</h3>
+          </div>
+        </Link>
+      ));
+  };
+
   return (
-    <div className='main-container'>
-        <div className='info-container'>
-
-        <img
-            width="400px"
-            src="https://img1.daumcdn.net/thumb/R1280x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/9WA0/image/z5Fp0o9Z2Afbl5uV5uoKed-_0kw">
-        </img>
-        <p>아이디어스에 오신 여러분 환영합니다!</p>
+    <>
+      <div className='Info'>
+        <div className='Info_container'>
+          <h1>전통주 정보</h1>
         </div>
-        <p style={{ padding: "0px 100px" }}>
-            아이디어스(idus)는 대한민국의 대표 핸드메이드 라이프 스타일 커머스
-            플랫폼이다. 어플과 PC로 이용 가능하며 직접 만든 핸드메이드 제품을 구입할
-            수 있다는 점에서 MZ세대가 많이 활용하는 서비스로 확인[1]되었다. 다른
-            커머스 플랫폼과 다르게 아이디어스에서는 판매자 대신 작가, 제품 대신
-            작품이라는 명칭을 사용[2]하며, 소비자는 자신이 좋아하는 작가를
-            팔로우하거나 마음에 드는 수제품을 구매하는 형태로 서비스를 이용할 수
-            있다
-        </p>
-    </div>
-  )
-}
+        <div className='Info_container_2'>
+          <div>
+            <div>
+              <button type="button" onClick={() => handleCategoryClick('탁주')}>
+                <img src="https://www.sooldamhwa.com/images/modules/damhwaMarket/category/icon_takju.png" alt="대체 텍스트" />
+                <span><b>탁주</b></span>
+              </button>
+              <button type="button" onClick={() => handleCategoryClick('약/청주')}>
+                <img src="https://www.sooldamhwa.com/images/modules/damhwaMarket/category/icon_cheongju.png" alt="대체 텍스트" />
+                <span><b>약/청주</b></span>
+              </button>
+              <button type="button" onClick={() => handleCategoryClick('과실주')}>
+                <img src="https://www.sooldamhwa.com/images/modules/damhwaMarket/category/icon_gwashilju.png" alt="대체 텍스트" />
+                <span><b>과실주</b></span>
+              </button>
+              <button type="button" onClick={() => handleCategoryClick('증류주')}>
+                <img src="https://www.sooldamhwa.com/images/modules/damhwaMarket/category/icon_jeungryuju.png" alt="대체 텍스트" />
+                <span><b>증류주</b></span>
+              </button>
+            </div>
+          </div>
+          <h1 className='info-title'>{selectedCategory || "전체 주종"}</h1>
+        </div>
 
-export default Info
+        <div className='Info_Main'>
+          {renderInfoBoxes()}
+        </div>
+      </div>
+
+      {/* 페이지네이션 */}
+      <div className="Info_PaginationWrapper">
+        <Pagination 
+          activePage={page}
+          itemsCountPerPage={5}
+          totalItemsCount={filteredLiquids.length}
+          pageRangeDisplayed={5}
+          prevPageText={"‹"}
+          nextPageText={"›"}
+          onChange={handlePageChange}
+        />
+      </div>
+    </>
+  );
+};
+
+export default Info;
+
+// import axios from "axios";
+// import { useState, useEffect } from "react";
+// import { Link } from "react-router-dom";
+// import Pagination from "react-js-pagination";
+
+// const Community = () => {
+//   const [page, setPage] = useState(1);
+//   const [communities, setCommunities] = useState([]);
+//   const pageSize = 10;
+
+//   useEffect(() => {
+//     loadCommunities(page, pageSize);
+//   }, []);
+
+//   const loadCommunities = (page, pageSize) => {
+//     axios
+//       .get(`http://localhost:8099/soolsool/community?page=${page - 1}&size=${pageSize}`)
+//       .then((response) => setCommunities(response.data.map((data) => data.community)))
+//       .catch((error) => console.error(error));
+//   };
+
+//   useEffect(() => {
+//     console.log(communities);
+//   }, [communities]);
+
+//   const handlePageChange = (page) => {
+//     setPage(page);
+//     loadCommunities(page, pageSize);
+//   };
+
+//   return (
+//     <div className="community">
+//       <br />
+//       <div className="community-header">
+//         <h1>커뮤니티</h1>
+//       </div>
+
+//       <div className="community-table-container">
+//         <div className="table-row-header">
+//           <div>
+//             <button className="community-write">
+//               <Link to="/Writing">글작성</Link>
+//             </button>
+//           </div>
+//         </div>
+
+//         <hr className="community-hr" />
+
+//         {communities.map((community, index) => (
+//   <div key={`community-post-${index}`} className="table-row">
+//             <div className="contents-idx">
+//               <span>{community.comm_idx}</span>
+//             </div>
+//             <div className="table-row-contents">
+//               <div className="contents-title">{community.comm_title}</div>
+
+//             </div>
+//             <div className="contents-img">
+//               <img
+//                 className="storageImg"
+//                 src={`http://localhost:8099/soolsool/static/img/${community.comm_file}`}
+//                 alt={`Thumbnail of Community Post ${community.comm_idx}`}
+//               />
+//             </div>
+//           </div>
+//         ))}
+
+//         <hr className="community-hr" />
+
+//         <div className="Info_PaginationWrapper">
+//           <Pagination
+//             activePage={page}
+//             itemsCountPerPage={10}
+//             totalItemsCount={100}
+//             pageRangeDisplayed={5}
+//             prevPageText={"‹"}
+//             nextPageText={"›"}
+//             onChange={handlePageChange}
+//           />
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Community;
+
+

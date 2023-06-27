@@ -1,0 +1,39 @@
+/* 아카이브 전체 컨테이너 */
+.archive-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 3px solid whitesmoke;
+  
+  border-radius: 4%;
+  height: 300px;
+}
+
+.archive-title {
+  text-align: center;
+  padding: 20px;
+}
+
+.archive-img-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* 이미지가 상하좌우 중앙 정렬되도록 함 */
+  padding: 10px;
+  flex: 1;
+}
+
+.archive-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* 이미지가 박스 크기와 맞게 조정되도록 하며, 이미지가 잘리지 않음 */
+}
+
+.Storage h1{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  padding-top: 50px;
+  padding-bottom: 90px;
+  text-decoration: underline;
+  text-decoration-color: whitesmoke;
+}

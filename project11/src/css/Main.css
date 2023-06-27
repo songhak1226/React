@@ -1,13 +1,9 @@
 .mainimg {
     width: 100%;
-    height: auto;
+    height: 450px;
     overflow: hidden;
-  }
   
-  .mainimg {
-    width: 100%;
-    height: 200px;
-    background-image: url("https://cdn.pixabay.com/photo/2019/05/21/11/35/absinthe-4218874_1280.jpg");
+    background-image: url("https://image-se.ycrowdy.com/20220504/CROWDY_0_202205041317510262_m5FodrGee1.gif");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -19,23 +15,7 @@
     font-size: 1rem;
     text-shadow: 1.5px 1.5px 1.5px rgba(1, 22, 106, 0.5);
   }
-  
-  .mainBox>hr:first-of-type {
-    height: 10px;
-    border: none;
-    background-color: whitesmoke;
-  }
-  
-  .mainBox>hr:nth-of-type(3) {
-    height: 10px;
-    border: none;
-    background-color: lightskyblue ;
-  }
-  .mainBox>hr:nth-of-type(2) {
-    height: 10px;
-    border: none;
-    background-color: lightcoral ;
-  }
+
   .mainimg_2 {
     display: flex;
     align-items: center;
@@ -48,7 +28,8 @@
     margin-top: 2.5%;
     width: 40%;
     height: 100px;
-    background-image: url("https://static.vecteezy.com/system/resources/thumbnails/015/084/715/small_2x/wood-wine-cabinet-icon-outline-bar-liquor-vector.jpg");
+    background-image: 
+    url("https://static.vecteezy.com/system/resources/thumbnails/015/084/715/small_2x/wood-wine-cabinet-icon-outline-bar-liquor-vector.jpg");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -71,5 +52,48 @@
     background-color: #f8f8f8;
     height: 100px;
     padding: 5%;
+    color: black;
   }
   
+
+  /* hr 태그 - 선 */
+  .mainBox>hr:first-of-type {
+    height: 10px;
+    border: none;
+    background-color: whitesmoke;
+  }
+  
+  .mainBox>hr:nth-of-type(2) {
+    height: 10px;
+    border: none;
+    background-color: #ffeaa7 ;
+  }
+
+  .mainBox>hr:nth-of-type(3) {
+    height: 10px;
+    border: none;
+    background-color: #fab1a0 ;
+  }
+
+  .menu-item12 a{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+  .menu-item12 button{
+    background-color: #74b9ff;
+    border: 3px solid whitesmoke;
+    font-size: 25px;
+    width: 100%;
+    height: 130px; 
+    cursor: pointer;
+    color: whitesmoke;
+  }
+  
+  .menu-item12 button:hover{
+    font-weight: bold;
+    
+  }  
+  .main-gap{
+    margin-top: 80px;
+  }

@@ -1,0 +1,342 @@
+/* 다크모드 버튼 먹여지는 부분 but 술창고호버 안됨 */
+.header-main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15%;
+  padding-top: 2%;
+  padding-bottom: 0.7%;
+  margin-left: 14%;
+  font-size: 20px;
+  text-align: center;
+}
+
+.header-main .Log button {
+  background-color: gray;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  font-size: 15px;
+  transition: color 0.3s ease;
+  width: 80px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  border: 1px solid whitesmoke;
+}
+
+
+
+.header-main .Log button:hover {
+  background-color: rgba(128, 128, 128, 0.515);
+  font-weight: bold;
+}
+
+.header-main .Log {
+  margin-right: 15px;
+  margin-top: 7px;
+}
+
+.logo {
+  white-space: nowrap;
+  padding-right: 3%;
+}
+
+.logo a {
+  text-decoration: none;
+}
+
+.menu-item {
+  white-space: nowrap;
+  position: relative;
+}
+
+.menu-title {
+  text-transform: uppercase;
+}
+
+.menu-content {
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  right: auto;
+  background-color: #fff;
+  min-width: 150px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transform-origin: top right;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.menu-item:hover .menu-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(10px);
+}
+
+.menu-item a:hover,
+.menu-title a:hover {
+  border-radius: 5px;
+  color: black;
+  font-weight: bold;
+}
+.menu-item a {
+  display: block;
+  padding: 5px 10px;
+  margin: 2px 0;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: black;
+}
+
+@media screen and (max-width: 768px) {
+  .header-main {
+    flex-direction: row;
+    gap: 20px;
+    font-size: 30px;
+    text-align: center;
+    padding: 40px 20px 10px 20px;
+  }
+
+  .menu-content {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    min-width: 150px;
+    padding: 10px;
+    margin-top: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transform-origin: top right;
+  }
+
+  .storage-open .menu-content {
+    display: block;
+  }
+}
+
+@media screen and (max-height: 500px) {
+  .header-main {
+    flex-direction: row;
+  }
+}
+
+html.dark-mode {
+  background-color: #202124;
+  color: white;
+}
+
+.dark-mode-toggle button {
+  background-color: black;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  font-size: 15px;
+  transition: color 0.3s ease;
+  width: 80px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid whitesmoke;
+}
+
+.dark-mode-toggle button:hover {
+  color: whitesmoke;
+}
+
+.dark-mode-toggle button:focus {
+  color: #aaa;
+}
+
+.dark-mode-toggle button.dark {
+  color: #888;
+}
+
+.dark-mode-toggle button.dark:hover {
+  color: #aaa;
+}
+
+.dark-mode-toggle button.dark:focus {
+  color: #ccc;
+}
+
+.dark-mode-toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+  padding-left: 100px;
+}
+
+html.dark-mode .menu-item a:hover {
+  background-color: rgba(128, 128, 128, 0.515);
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.dark-mode-toggle .Lightmode{
+  background-color: White;
+  color: black;
+}
+
+
+/* ------------------술창고 호버&로그인 클릭 먹여지는 부분 ----------------- */
+/* .header-main {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap; 
+  gap: 5%;
+  padding-top: 40px;
+  padding-bottom: 10px;
+  margin-left: 10%; 
+  margin-right: auto; 
+  font-size: 20px;
+  position: relative;
+}
+
+.logo {
+  font-weight: bold;
+  white-space: nowrap;
+  padding-right: 3%;
+}
+
+.logo a {
+  text-decoration: none;
+  
+}
+
+.menu-item {
+  white-space: nowrap;
+  flex: 1; 
+  min-width: 0; 
+  position: relative;
+}
+
+.menu-title {
+  text-transform: uppercase;
+
+}
+
+.menu-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0; 
+  background-color: #fff;
+  min-width: 150px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transform-origin: top right;
+}
+
+.storage-open .menu-content {
+  display: block;
+}
+
+.menu-item div a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  padding: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.menu-item a:hover,
+.menu-title a:hover {
+  border-radius: 5px;
+  color: black;
+  font-weight: bold;
+}
+
+.logo,
+.menu-item {
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 768px) {
+  .header-main {
+    flex-direction: column;
+    gap: 20px;
+    font-size: 30px;
+    text-align: center;
+    padding: 40px 20px 10px 20px;
+  }
+
+  .menu-content {
+    position: static;
+    display: block;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+    min-width: 0;
+  }
+
+  .storage-open .menu-content {
+    display: block;
+  }
+}
+
+@media screen and (max-height: 500px) {
+  .header-main {
+    flex-direction: row;
+  }
+}
+
+html.dark-mode {
+  background-color: #202124;
+  color: white;
+}
+
+.dark-mode-toggle button {
+  background-color: black;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  font-size: 12px;
+  transition: color 0.3s ease;
+}
+
+.dark-mode-toggle button:hover {
+  color: whitesmoke;
+}
+
+.dark-mode-toggle button:focus {
+  color: #aaa;
+}
+
+.dark-mode-toggle button.dark {
+  color: #888;
+}
+
+.dark-mode-toggle button.dark:hover {
+  color: #aaa;
+}
+
+.dark-mode-toggle button.dark:focus {
+  color: #ccc;
+}
+
+.dark-mode-toggle {
+  margin-left: 5%; 
+  margin-right: auto; 
+}
+
+html.dark-mode .menu-item a:hover {
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+} */
